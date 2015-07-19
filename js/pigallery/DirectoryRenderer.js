@@ -96,7 +96,7 @@ define(["jquery", "PiGallery/ThumbnailManager", "detectmobilebrowser_jquery" ], 
             });
 
             //update picture on mouse move
-            var mouseMoveHandler = function (event) {
+            /*var mouseMoveHandler = function (event) {
                 var $targetDiv = $(event.target).closest(".gallery-directory-image");
                 var lastUpdate = $targetDiv.data("lastUpdate");
 
@@ -118,7 +118,7 @@ define(["jquery", "PiGallery/ThumbnailManager", "detectmobilebrowser_jquery" ], 
                     thumbnailManager.loadThumbnailToDiv($img, directory.samplePhotos[dirCounter], dimension.width, dimension.height);
                     $img.fadeIn();
                 });
-            };
+            };*/
 
             for (var i = 0; i < directories.length; i++) {
 
@@ -130,7 +130,7 @@ define(["jquery", "PiGallery/ThumbnailManager", "detectmobilebrowser_jquery" ], 
                 if (directory.samplePhotos.length > 0) {
                     var dimension = calcPhotoDimension(directory.samplePhotos[0]);
                     $samplePhoto = thumbnailManager.createThumbnail(directory.samplePhotos[0], dimension.width, dimension.height);
-                    $samplePhoto.mousemove(mouseMoveHandler);
+                    //$samplePhoto.mousemove(mouseMoveHandler);
                 } else {
                     //randomizing no-image gallery icon
                     var galleyIconID = (((directory.directoryName.charCodeAt(0) + directory.directoryName.charCodeAt(directory.directoryName.length - 1) + directory.directoryName.length) % 4) + 1);
