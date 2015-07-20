@@ -249,8 +249,8 @@ PiGallery.initModalLogin = function(galleryRenderer){
 };
 
 PiGallery.initGallery = function(callback){
-    require(['jquery', 'blueImpGallery', 'PiGallery/ContentManager', 'PiGallery/GalleryRenderer', "PiGallery/AutoComplete","PiGallery/SharingManager",  'jquery_cookie', 'PiGallery/Enums' ],
-        function   ($,blueimpGallery,ContentManager, GalleryRenderer, AutoComplete, SharingManager) {
+    require(['jquery', 'blueImpGallery', 'PiGallery/ContentManager', 'PiGallery/GalleryRenderer', "PiGallery/AutoComplete", 'jquery_cookie', 'PiGallery/Enums' ],
+        function   ($,blueimpGallery,ContentManager, GalleryRenderer, AutoComplete) {
 
 
             PiGallery.initSite();
@@ -331,7 +331,7 @@ PiGallery.initGallery = function(callback){
             PiGallery.initModalLogin(galleryRenderer);
             
             /*Init sharing*/
-            PiGallery.sharingManger = new SharingManager(galleryRenderer);
+            //PiGallery.sharingManger = new SharingManager(galleryRenderer);
 
             PiGallery.gallerySiteInitDone = true;
             if(callback){
@@ -369,7 +369,7 @@ PiGallery.showAdminSite = function(){
 
 PiGallery.showGallery = function(){
 
-    require(['jquery', 'PiGallery/Enums',"PiGallery/SharingManager"], function   ($) {
+    require(['jquery', 'PiGallery/Enums'], function   ($) {
 
         var _showGallery = function(){
             var $adminButton = $("#adminButton");
